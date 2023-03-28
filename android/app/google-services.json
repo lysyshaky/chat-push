@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1027788779503",
+    "project_id": "chat-push-6008e",
+    "storage_bucket": "chat-push-6008e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027788779503:android:d24ac17b496d9105e5501a",
+        "android_client_info": {
+          "package_name": "com.example.chat_push"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027788779503-1tp0b5c2v798rb71b9fsj2cu20a5219s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7L9qGpJYhCKa9RZn9wjewY6v9YZAHiQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027788779503-1tp0b5c2v798rb71b9fsj2cu20a5219s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

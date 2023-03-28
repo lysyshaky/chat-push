@@ -12,16 +12,34 @@ class _NewMessageState extends State<NewMessage> {
   var _enteredMessage = '';
 
   void _sendMessage() async {
-    FocusScope.of(context).unfocus();
-    final user = await FirebaseAuth.instance.currentUser();
-    final userData = await Firestore.instance.collection('users').document(user.uid).get();
-    Firestore.instance.collection('chat').add({
-      'text': _enteredMessage,
-      'createdAt': Timestamp.now(),
-      'userId': user.uid,
-      'username': userData['username'],
-      'userImage': userData['image_url']
-    });
+    // Check if message is not empty
+    if (_controller.text.trim().isEmpty) {
+      return;
+    }
+
+    final user = FirebaseAuth.instance.currentUser;
+    final userData = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.uid)
+        .get();
+
+    // Check if user data exists and has a valid value for the username property
+    if (userData.exists &&
+        userData.data() != null &&
+        userData.data()['username'] != null) {
+      final username = userData.data()['username'];
+      final message = _controller.text.trim();
+
+      await FirebaseFirestore.instance.collection('chat').add({
+        'text': message,
+        'createdAt': Timestamp.now(),
+        'userId': user.uid,
+        'username':
+            username, // Make sure that username property exists and has a valid value
+        'userImage': userData.data()['imageUrl'],
+      });
+    }
+
     _controller.clear();
   }
 

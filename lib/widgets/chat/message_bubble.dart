@@ -52,7 +52,7 @@ class MessageBubble extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: isMe
                           ? Colors.black
-                          : Theme.of(context).accentTextTheme.headline6.color,
+                          : Theme.of(context).accentTextTheme.headline1.color,
                     ),
                   ),
                   Text(
@@ -60,7 +60,7 @@ class MessageBubble extends StatelessWidget {
                     style: TextStyle(
                       color: isMe
                           ? Colors.black
-                          : Theme.of(context).accentTextTheme.headline6.color,
+                          : Theme.of(context).accentTextTheme.headline2.color,
                     ),
                     textAlign: isMe ? TextAlign.end : TextAlign.start,
                   ),
@@ -75,7 +75,8 @@ class MessageBubble extends StatelessWidget {
           right: isMe ? 120 : null,
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-              userImage,
+              userImage ??
+                  'https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png',
             ),
           ),
         ),

@@ -2,20 +2,26 @@ buildscript {
     ext.kotlin_version = '1.8.10'
     repositories {
         google()
-        mavenCentral()
+        jcenter()
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:7.1.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.3.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+       
+        // // Example existing classpath
+        // classpath 'com.android.tools.build:gradle:3.5.3'
+        // // Add the google services classpath
+        // classpath 'com.google.gms:google-services:4.3.2'
+        
     }
 }
 
 allprojects {
     repositories {
         google()
-        mavenCentral()
+        jcenter()
     }
 }
 
